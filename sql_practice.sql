@@ -1,4 +1,8 @@
-use test
+CREATE DATABASE SQL_TASK_BT_DB;
+
+USE SQL_TASK_BT_DB;
+
+SELECT DATABASE();
 
 CREATE TABLE students_dts(
 stu_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -6,63 +10,63 @@ stu_name VARCHAR(20),
 stu_age INT,
 marks INT,
 city VARCHAR(50)
-)
+);
 
 INSERT INTO students_dts (stu_name,stu_age,marks,city) VALUES  ( "VICKY", 21, 78, "COIMBATORE"),
  ( "ROHITH", 20, 98, "CHENNAI"),
 ( "JAMSHEER", 19, 90, "CHENNAI"),
 ( "VISHNU" ,19, 85, "DELHI"),
 ( "HARI", 21, 36, "CHENNAI"),
-( "RAVI", 20, 63, "COIMBATORE")
+( "RAVI", 20, 63, "COIMBATORE");
 
-SELECT * FROM students_dts
+SELECT * FROM students_dts;
 
-SELECT stu_name,marks FROM students_dts
+SELECT stu_name,marks FROM students_dts;
 
-SELECT * FROM students_dts WHERE  marks > 80 
+SELECT * FROM students_dts WHERE  marks > 80 ;
 
-SELECT * FROM students_dts WHERE city = "CHENNAI"
+SELECT * FROM students_dts WHERE city = "CHENNAI";
 
-SELECT * FROM students_dts WHERE stu_age > 20
+SELECT * FROM students_dts WHERE stu_age > 20;
 
-SELECT * FROM students_dts WHERE marks BETWEEN 60 AND 80
+SELECT * FROM students_dts WHERE marks BETWEEN 60 AND 80;
 
-SELECT * FROM students_dts WHERE stu_name LIKE 'V%'
+SELECT * FROM students_dts WHERE stu_name LIKE 'V%';
 
-SELECT * FROM students_dts WHERE city <> "CHENNAI" 
+SELECT * FROM students_dts WHERE city <> "CHENNAI" ;
 
-SELECT * FROM students_dts ORDER BY marks DESC
+SELECT * FROM students_dts ORDER BY marks DESC;
 
-SELECT * FROM students_dts ORDER BY marks DESC LIMIT 4
+SELECT * FROM students_dts ORDER BY marks DESC LIMIT 4;
 
-SELECT COUNT(*) AS Total_Students FROM students_dts
+SELECT COUNT(*) AS Total_Students FROM students_dts;
 
-SELECT AVG(marks) AS Average_Marks FROM students_dts
+SELECT AVG(marks) AS Average_Marks FROM students_dts;
 
-SELECT MAX(marks) AS Maximum_Marks FROM students_dts
+SELECT MAX(marks) AS Maximum_Marks FROM students_dts;
 
-SELECT MIN(marks) AS Minimum_Marks FROM students_dts
+SELECT MIN(marks) AS Minimum_Marks FROM students_dts;
 
-SELECT SUM(marks) AS Totalmarks FROM students_dts
+SELECT SUM(marks) AS Totalmarks FROM students_dts;
 
-SELECT city, COUNT(*) AS Total_Students FROM students_dts GROUP BY city
+SELECT city, COUNT(*) AS Total_Students FROM students_dts GROUP BY city;
 
-SELECT city, AVG(marks) AS Average_Marks_city FROM students_dts GROUP BY city
+SELECT city, AVG(marks) AS Average_Marks_city FROM students_dts GROUP BY city;
 
-SELECT city, COUNT(*) AS Total_Students FROM students_dts GROUP BY city
+SELECT city, COUNT(*) AS Total_Students FROM students_dts GROUP BY city;
 
-SELECT city, AVG(marks) AS Average_Marks_city FROM students_dts GROUP BY city
+SELECT city, AVG(marks) AS Average_Marks_city FROM students_dts GROUP BY city;
 
-SELECT city, AVG(marks) AS Average_Marks_city FROM students_dts GROUP BY city HAVING AVG(marks) > 70
+SELECT city, AVG(marks) AS Average_Marks_city FROM students_dts GROUP BY city HAVING AVG(marks) > 70;
 
-SELECT city, COUNT(*) AS More_than_2stu FROM students_dts GROUP BY city HAVING COUNT(*) > 2
+SELECT city, COUNT(*) AS More_than_2stu FROM students_dts GROUP BY city HAVING COUNT(*) > 2;
 
 CREATE TABLE Orders_details(
 order_id INT PRIMARY KEY,
 cus_name VARCHAR(50),
 order_date DATE,
 amount DECIMAL(10,2)
-)
+);
 
 INSERT INTO Orders_details VALUES (101, 'Rahul',  '2026-07-25', 1500.50),
 (102, 'Vignesh', '2026-07-24', 2200.00),
